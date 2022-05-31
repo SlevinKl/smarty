@@ -1,2 +1,17 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="container my-5">
+<h2 class='mb-5'>This is the index showing all the events of the user starting with the closest event</h1>
+<% @events.each do |event| %>
+  <ul>
+    <div class="border rounded w-50">
+      <div><%= link_to event_path(event) do %>
+        <li><%= event.title %></li>
+        <li><%= event.venue %></li>
+        <li><%= event.address %></li>
+        <li><%= event.starts_at %></li>
+        <li><%= event.category %></li>
+        <% end %>
+      </div>
+    </div>
+  </ul>
+<% end %>
+</div>
