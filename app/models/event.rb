@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   CATEGORIES = %w[Sport Culture Voyage Autres]
   has_one_attached :document
   belongs_to :user
