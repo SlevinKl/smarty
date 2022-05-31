@@ -1,10 +1,17 @@
 class EventsController < ApplicationController
   def index
     @events = current_user.events
+
   end
 
   def show
     @event = Event.find(params[:id])
+    @markers = @event.geocode.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 
   def new
