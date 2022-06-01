@@ -1,10 +1,19 @@
 class EventsController < ApplicationController
   def index
+<<<<<<< HEAD
+    @events = current_user.events
+
+=======
     @events = Event.all
+>>>>>>> master
   end
 
   def show
     @event = Event.find(params[:id])
+    @marker = {
+      lat: @event.latitude,
+      lng: @event.longitude
+    }
   end
 
   def new
@@ -28,7 +37,12 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :venue, :starts_at, :address,
+<<<<<<< HEAD
+                                  :latitude, :longitude, :category, :identity_card,
+                                  :driver_card, :passport, :photo)
+=======
       :latitude, :longitude, :category, :identity_card,
       :driver_card, :passport, :document)
+>>>>>>> master
   end
 end
