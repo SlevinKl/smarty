@@ -6,12 +6,10 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @markers = @event.geocode.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude
-      }
-    end
+    @marker = {
+      lat: @event.latitude,
+      lng: @event.longitude
+    }
   end
 
   def new
@@ -34,7 +32,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :venue, :starts_at, :address,
-      :latitude, :longitude, :category, :identity_card,
-      :driver_card, :passport, :photo)
+                                  :latitude, :longitude, :category, :identity_card,
+                                  :driver_card, :passport, :photo)
   end
 end

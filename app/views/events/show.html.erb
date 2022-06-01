@@ -1,15 +1,17 @@
 <div class="container my-5">
   <h2 class='mb-5'>This page shows the details of 1 event</h2>
+  <div class="my-5">
+    <li><%= @event.title %></li>
+    <li><%= @event.venue %></li>
+    <li><%= @event.address %></li>
+    <li><%= @event.category %></li>
+  </div>
 
-  <%= @event.title %>
-  <%= @event.venue %>
-  <%= @event.address %>
-  <%= @event.category %>
 
-
-  <div style="width: 100%; height: 600px;"
+  <div style="width: 100%; height: 300px;"
   data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-marker-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  class="my-5"></div>
 
 </div>
