@@ -10,3 +10,30 @@
   padding: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+
+.btn-sign-up {
+  display: block;
+  font-weight: bolder;
+  background-color: #7061DE;
+  color: white;
+  border-radius: 30px;
+  width: 75%;
+  padding: 15px 25px;
+  margin: 30px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.btn-sign-in {
+  display: block;
+  font-weight: bolder;
+  background-color: white;
+  color: #7061DE;
+  border-radius: 30px;
+  width: 75%;
+  padding: 15px 25px;
+  margin: 30px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: #7061DE solid 1px;
+}
