@@ -1,3 +1,7 @@
+body {
+  background-color: white;
+}
+
 .event-planning-container {
   display: flex;
   justify-content: space-between;
@@ -23,13 +27,19 @@ ul {
   margin-right: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 15px;
   height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 100px;
+}
+
+.event-info li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .event-day {
@@ -52,7 +62,7 @@ ul {
 }
 
 .Culture{
-  background-color: hsl(357, 71%, 88%);
+  background-color: hsl(357, 100%, 92%);
 }
 
 .Voyage{
@@ -60,5 +70,5 @@ ul {
 }
 
 .Autres{
-  background-color: hsl(191, 69%, 72%);
+  background-color: hsl(191, 74%, 82%);
 }

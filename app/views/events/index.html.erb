@@ -1,14 +1,16 @@
 <div class="container my-5">
 
 
-  <div class='d-flex justify-content-around'>
-    <h3> <i class="fa-solid fa-arrow-left-long"></i> May</h3>
-    <h3><strong>June</strong></h3>
-    <h3>July <i class="fa-solid fa-arrow-right"></i> </h3>
+  <div class='d-flex justify-content-around align-items-center mb-5'>
+    <h4> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> May</h4>
+    <h2><strong>June</strong></h2>
+    <h4>July <small> <i class="fa-solid fa-arrow-right"></i> </small> </h4>
   </div>
 
+  <div class="mb-5">
+    <%= link_to "Add event", new_event_path, class: 'btn-add-event'%>
+  </div>
 
-  <%= link_to "Add event", new_event_path, class: 'btn-add-event'%>
   <% @events.each do |event| %>
     <ul>
       <div class="">
