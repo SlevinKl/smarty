@@ -1,0 +1,64 @@
+.event-planning-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+  align-items: center;
+
+}
+.event-planning-container li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.event-info {
+  flex-grow: 1;
+  margin-left: 15px;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-day {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #7061DE;
+  color: white;
+  font-weight: bolder;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.Sport{
+  background-color: #c7f9ae;
+}
+
+.Culture{
+  background-color: hsl(357, 71%, 88%);
+}
+
+.Voyage{
+  background-color: hsl(29, 79%, 85%);
+}
+
+.Autres{
+  background-color: hsl(191, 69%, 72%);
+}
