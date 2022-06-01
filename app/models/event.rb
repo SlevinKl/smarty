@@ -6,6 +6,6 @@ class Event < ApplicationRecord
 
   has_one_attached :document
   belongs_to :user
-  validates :title, :venue, :starts_at, :address, :category, presence: true
-  validates :category, inclusion: { in: CATEGORIES }
+  # validates :title, :venue, :starts_at, :address, :category, presence: true
+  # validates :category, inclusion: { in: CATEGORIES }
 end

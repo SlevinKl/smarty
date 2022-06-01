@@ -4,13 +4,8 @@
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
     <div class="form-container mt-1">
-      <h3>Add my event</h3>
+      <h3>Add Document</h3>
       <%= simple_form_for(@event) do |f| %>
-        <%= f.input :title, placeholder: "Ex: Albert" %>
-        <%= f.input :venue, placeholder: "Ex: Paris" %>
-        <%= f.input :address, placeholder: "Ex: Cow" %>
-        <%= f.input :category, placeholder: "Ex: funny" %>
-        <%= f.input :starts_at %>
         <%= f.input :document, as: :file %>
         <%= f.submit 'Add', class: 'btn btn-primary'%>
       <% end %>
