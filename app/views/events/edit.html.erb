@@ -1,2 +1,17 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<div class="container mb-5 p-5">
+  <%= link_to "Back to Events", events_path, class: 'btn btn-back' %>
+    <%= link_to events_path, class:'btn-back' do %>
+    <i class="fa-solid fa-angle-left"></i>
+  <% end %>
+    <div class="form-container mt-1">
+      <h3>Informations:</h3>
+      <%= simple_form_for(@event) do |f| %>
+        <%= f.input :title, placeholder: "Ex: Albert" %>
+        <%= f.input :venue, placeholder: "Ex: Paris" %>
+        <%= f.input :address, placeholder: "Ex: Cow" %>
+        <%= f.input :starts_at, html5: true %>
+        <%= f.input :category, collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
+        <%= f.submit 'Valid', class: 'btn btn-primary'%>
+      <% end %>
+    </div>
+</div>
