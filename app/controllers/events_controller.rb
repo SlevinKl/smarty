@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = current_user.events
+    @events = Event.all
   end
 
   def show
@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   def create
     @user = current_user
+
     @event = Event.new(event_params)
     @event.user = @user
     if @event.save
@@ -28,6 +29,6 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :venue, :starts_at, :address,
       :latitude, :longitude, :category, :identity_card,
-      :driver_card, :passport, :photo)
+      :driver_card, :passport, :document)
   end
 end
