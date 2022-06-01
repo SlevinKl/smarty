@@ -29,7 +29,7 @@ class ExtractEventInfos
 
     venue_n_address = description.match(/^((?<venue>[a-zA-Z\s]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+\s*[a-z\s]*,\s[0-9]+\s[a-zA-Z]+)/)
 
-    venue   = venue_n_address[:venue]
+    venue = venue_n_address[:venue]
     address = venue_n_address[:address]
 
     # cas simple: le titre fait que une seule ligne (sweat smile...)

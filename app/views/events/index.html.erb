@@ -1,19 +1,31 @@
 <div class="container my-5">
-<h2 class='mb-5'>This is the index showing all the events of the user starting with the closest event</h1>
-<% @events.each do |event| %>
-  <ul>
-    <div class="border rounded w-50">
-      <div><%= link_to event_path(event) do %>
-        <li><%= event.title %></li>
-        <li><%= event.venue %></li>
-        <li><%= event.address %></li>
-        <li><%= event.starts_at %></li>
-        <li><%= event.category %></li>
-        <% end %>
-      </div>
-    </div>
-  </ul>
-<% end %>
-</div>
 
-      <%= link_to "Add event", new_event_path, class: 'btn-add nav-btn'%>
+
+  <div class='d-flex justify-content-around align-items-center mb-5'>
+    <h4> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> May</h4>
+    <h2><strong>June</strong></h2>
+    <h4>July <small> <i class="fa-solid fa-arrow-right"></i> </small> </h4>
+  </div>
+
+  <div class="mb-5">
+    <%= link_to "Add event", new_event_path, class: 'btn-add-event'%>
+  </div>
+
+  <% @events.each do |event| %>
+    <ul>
+      <div class="">
+        <div class=''><%= link_to event_path(event) do %>
+            <div class="event-planning-container">
+              <div class='event-day'>
+                <li><%= event.starts_at.day %></li>
+              </div>
+              <div class='event-info <%=event.category%>' >
+                <li><strong><%= event.title %></strong> <small> - <%= event.venue %></small></li>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>
