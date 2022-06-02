@@ -22,7 +22,9 @@
     <%= render "shared/flashes" %>
     <div class="wrapper d-flex flex-column">
       <%= yield %>
-      <%= render 'shared/bottom' %>
+      <% if current_page?(dashboard_path) || current_page?(new_event_path) ||  (params[:controller] == 'events' && params[:action] == 'show')%>
+        <%= render 'shared/bottom' %>
+      <% end %>
     </div>
   </body>
 </html>
