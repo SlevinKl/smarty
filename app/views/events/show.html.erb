@@ -1,17 +1,39 @@
-<div class="container my-5">
-  <h2 class='mb-5'>This page shows the details of 1 event</h2>
-  <div class="my-5">
-    <li><%= @event.title %></li>
-    <li><%= @event.venue %></li>
+<div class="container show">
+  <h2 class=''><%= @event.title %></h2>
+  <div class="event-date-cont">
+    <li class='date-cont'><%= @event.starts_at.strftime("%d %b")%></li>
+    <li class='date-cont'><%= @event.starts_at.strftime("%l:%M %p")%></li>
+  </div>
+  <div class="event-info-show">
+
+    <li><strong><%= @event.venue %></strong></li>
     <li><%= @event.address %></li>
-    <li><%= @event.category %></li>
   </div>
 
 
-  <div style="width: 100%; height: 300px;"
+  <div style="width: 100%; height: 300px; border-radius: 30px; "
   data-controller="map"
   data-map-marker-value="<%= @marker.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  class="my-5"></div>
+  class="my-3"></div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn-see-pdf" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Voir PDF
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" style>
+          <embed src="<%= cl_image_path @event.document.key%>" type="" height="400">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
