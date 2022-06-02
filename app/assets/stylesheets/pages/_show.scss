@@ -1,0 +1,35 @@
+.event-date-cont {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+
+.date-cont {
+  border: black 1px solid;
+  width: 100px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  padding: 10px 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.show body {
+  text-align: center;
+}
+
+h2 {
+  margin: 30px;
+  font-weight: bolder;
+  font-size: 50px;
+  text-align: center;
+}
+
+.event-info-show {
+  list-style-type: none;
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+}

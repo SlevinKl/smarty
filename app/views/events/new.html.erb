@@ -1,15 +1,22 @@
-<div class="container mb-5 p-5">
-  <%= link_to "Back to Events", events_path, class: 'btn btn-back' %>
-    <%= link_to events_path, class:'btn-back' do %>
-    <i class="fa-solid fa-angle-left"></i>
-  <% end %>
-    <div class="form-container mt-1">
-      <h3>Add Document</h3>
-      <%= simple_form_for(@event) do |f| %>
-        <%= f.input :document, as: :file %>
-        <%= f.submit 'Add', class: 'btn btn-primary'%>
-      <% end %>
 
-    </div>
+<div data-controller="loader">
+  <div class="container mb-5 p-5">
+    <%= link_to "Back to Events", events_path, class: 'btn btn-back' %>
+      <%= link_to events_path, class:'btn-back' do %>
+      <i class="fa-solid fa-angle-left"></i>
+    <% end %>
+      <div class="form-container mt-1">
+        <h3>Add Document</h3>
+        <%= simple_form_for(@event) do |f| %>
+          <%= f.input :document, as: :file %>
+          <%= f.submit 'Add', class: 'btn-add-event', data: {action: "click->loader#display"} %>
+        <% end %>
+      </div>
+  </div>
+
+
+  <div class="transparent d-flex align-items-center justify-content-center d-none" data-loader-target="ploader">
+    <div class="loader"></div>
+  </div>
 
 </div>
