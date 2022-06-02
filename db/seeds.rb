@@ -2,9 +2,9 @@ require "open-uri"
 
 #### URL avatar
 guilhem = URI.open("https://avatars.githubusercontent.com/u/102871325?v=4")
-alex = URI.open("https://avatars.githubusercontent.com/u/101417151?v=4")
-rayane = URI.open("https://avatars.githubusercontent.com/u/95938506?v=4")
-patrick = URI.open("https://avatars.githubusercontent.com/u/102688364?v=4")
+alex = URI.open("https://drive.google.com/file/d/1ir-FFcDCO8PbTJDffybEEmEymq62yTww/view?usp=sharing")
+rayane = URI.open("https://drive.google.com/file/d/1ZuddiOl9Hadn0TDFMaVHIhuETZVkS5gN/view?usp=sharing")
+patrick = URI.open("https://drive.google.com/file/d/1PYCGzBBCtH4GJwKMYmoRO73gH4SprLZl/view?usp=sharing")
 
 #### URL events
 billet1 = URI.open("https://drive.google.com/file/d/1ZMH6YpFqN8ANQOCnwtpEh9FVET0QxqpG/view?usp=sharing")
