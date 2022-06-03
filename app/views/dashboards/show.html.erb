@@ -1,13 +1,22 @@
-<div class="container flex-grow-1">
-  <div class=''><%= link_to event_path(@events.first) do %>
-    <div class="event-planning-container">
-        <div class='event-day'>
-          <li><%= @events.first.starts_at.day %></li>
-        </div>
-        <div class='event-info <%=@events.first.category%>' >
-          <li><strong><%= @events.first.title %></strong> <small> - <%= @events.first.venue %></small></li>
-        </div>
+<div class="container my-5 flex-grow-1">
+
+  <h1><%= @events.first.starts_at.strftime("%A %_d %B %Y") %>
+  </h1>
+
+  <div class="card-trip">
+    <%= image_tag "event_demo_day.jpg" %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @events.first.title %></h2>
+        <p><%= @events.first.venue %></p>
       </div>
-    <% end %>
+      <div>
+        <p><%= @events.first.starts_at.strftime("%l:%M") %></p>
+      </div>
+    </div>
   </div>
+  <div class="qr_cont">
+    <%= image_tag "qr_code.png", class:"qrcode" %>
+  </div>
+
 </div>

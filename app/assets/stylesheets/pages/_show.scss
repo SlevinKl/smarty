@@ -59,3 +59,22 @@
     transform: translate3d(-100%,0,0);  /* position finale à gauche */
   }
 }
+
+.qrcode {
+  width: 200px;
+  justify-content: center;
+
+}
+
+.qr_cont{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-grow-1 h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
