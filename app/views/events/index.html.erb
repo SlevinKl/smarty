@@ -1,10 +1,16 @@
+
+
 <div class="container my-5">
-
-
   <div class='d-flex justify-content-around align-items-center mb-5'>
-    <h4> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> May</h4>
-    <h2><strong>June</strong></h2>
-    <h4>July <small> <i class="fa-solid fa-arrow-right"></i> </small> </h4>
+
+    <%= link_to events_path(date: @date - 1.month) do  %>
+      <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= (@date - 1.month).strftime("%b") %></h5>
+    <% end %>
+    <h3><strong><%= @date.strftime("%^B") %></strong></h3>
+    <%= link_to events_path(date: @date + 1.month) do %>
+      <h5><%= (@date + 1.month).strftime("%b") %> <small> <i class="fa-solid fa-arrow-right"></i> </small></h5>
+    <% end  %>
+
   </div>
 
   <div class="mb-5">
@@ -12,20 +18,23 @@
   </div>
 
   <% @events.each do |event| %>
-    <ul>
-      <div class="">
-        <div class=''><%= link_to event_path(event) do %>
-            <div class="event-planning-container">
-              <div class='event-day'>
-                <li><%= event.starts_at.day %></li>
+
+    <% if @date.strftime("%B") == event.starts_at.strftime("%B") %>
+      <ul>
+        <div class="">
+          <div class=''><%= link_to event_path(event) do %>
+              <div class="event-planning-container">
+                <div class='event-day'>
+                  <li><%= event.starts_at.day %></li>
+                </div>
+                <div class='event-info <%=event.category%>' >
+                  <li><strong><%= event.title %></strong> <small> - <%= event.venue %></small></li>
+                </div>
               </div>
-              <div class='event-info <%=event.category%>' >
-                <li><strong><%= event.title %></strong> <small> - <%= event.venue %></small></li>
-              </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </ul>
+      </ul>
+    <% end %>
   <% end %>
 </div>

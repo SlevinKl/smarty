@@ -3,6 +3,11 @@ class EventsController < ApplicationController
 
   def index
     @events = current_user.events
+    if params["date"]
+      @date = params["date"].to_date
+    else
+      @date = Date.today
+    end
   end
 
   def show

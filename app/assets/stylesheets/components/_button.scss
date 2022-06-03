@@ -9,6 +9,7 @@
   width: 50%;
   padding: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: none;
 }
 
 .btn-sign-up {
@@ -21,6 +22,7 @@
   padding: 15px 25px;
   margin: 30px auto;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 
@@ -36,6 +38,7 @@
   margin: 30px auto;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: #7061DE solid 1px;
+  text-align: center;
 }
 
 .btn-see-pdf {
@@ -49,4 +52,24 @@
   text-align: center;
   margin: 20px auto;
   display: block;
+}
+
+.btn-forgot {
+  text-decoration: none;
+  padding: 15px 20px;
+  border: #cbbbbb solid 1px;
+  border-radius: 30px;
+  color: #cbbbbb;
+  text-align: center;
+  margin: 0px 35px;
+  width: 75%;
+  display: block;
+}
+
+.btn-back {
+  font-size: 30px;
+  font-weight: bold;
+  color: #cbbbbb;
+  display: block;
+
 }

@@ -4,6 +4,7 @@
     <title>Smarty</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,9 +17,14 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-
-    <%= yield %>
+    <div class="wrapper d-flex flex-column">
+      <%= yield %>
+      <% if current_page?(dashboard_path) || current_page?(new_event_path) ||  (params[:controller] == 'events' && params[:action] == 'show')%>
+        <%= render 'shared/bottom' %>
+      <% end %>
+    </div>
   </body>
 </html>
