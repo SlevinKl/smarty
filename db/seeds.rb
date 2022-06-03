@@ -51,7 +51,7 @@ event_patrick_03.save!
 event_patrick_04 = Event.new({ title: "Le lac des cygnes", venue: "Opéra de Paris", starts_at: DateTime.new(2022, 06, 04, 20, 00), address: "Place de l'Opéra, 75009 Paris", latitude: "48.87111282348633", longitude: "2.3321521282196045", category: "Culture", identity_card: true, user: user_patrick })
 event_patrick_04.document.attach(io: billet4, filename: "OPERA1")
 event_patrick_04.save!
-event_patrick_05 = Event.new({ title: "Nadal - Djokovic", venue: "Roland-Garros", starts_at:  , address: "2 avenue Gordon Benett, 75016 Paris", latitude: "48.8637", longitude: "2.2769", category: "Sport", identity_card: true, user: user_patrick })
+event_patrick_05 = Event.new({ title: "Nadal - Djokovic", venue: "Roland-Garros", starts_at: DateTime.new(2022, 06, 05, 20, 00) , address: "2 avenue Gordon Benett, 75016 Paris", latitude: "48.8637", longitude: "2.2769", category: "Sport", identity_card: true, user: user_patrick })
 event_patrick_05.document.attach(io: billet5, filename: "ROLAND")
 event_patrick_05.save!
 event_patrick_06 = Event.new({ title: "Paris New-York", venue: "CDG", starts_at: DateTime.new(2022, 06, 06, 11, 00), address: "95700 Roissy-en-France", latitude: "49.0032865", longitude: "2.5176985", category: "Voyage", passport: true, user: user_patrick })
