@@ -1,13 +1,18 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background-color: #7061DE;
-  height: 8vh;
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 10vh;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand img {
+  width: 50px;
+  margin-top: 20px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar h2 {
+  font-family: 'Poppins', sans-serif;
+  margin: 20px 0 0 0;
+  font-weight: bold;
+  font-size: 36px;
 }
