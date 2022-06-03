@@ -21,54 +21,66 @@ ul {
   padding-left: 0px;
 }
 
-.event-info {
-  flex-grow: 1;
-  margin-left: 15px;
-  margin-right: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 5px 15px;
+.event-info-wrapper {
   height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100px;
+  border-radius: 8px;
 }
 
-.event-info li {
+.event-info {
+  margin-left: 15px;
+  margin-right: 2px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  height: 90%;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
+  width: 265px;
+  background-color: white;
+}
+
+.event-info .overflow-info {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 10px;
+}
 
+.see-event-info {
+  color: #ACB5BD;
 }
 
 .event-day {
   margin-left: 10px;
-  width: 50px;
   height: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #7061DE;
-  color: white;
+  color: black;
   font-weight: bolder;
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .Sport{
-  background-color: #c7f9ae;
+  background-color: #B6169E;
 }
 
 .Culture{
-  background-color: hsl(357, 100%, 92%);
+  background-color: #FF9E02;
 }
 
 .Voyage{
-  background-color: hsl(29, 79%, 85%);
+  background-color: #F72485;
 }
 
 .Autres{
-  background-color: hsl(191, 74%, 82%);
+  background-color: #7061DE;
+}
+
+h5 {
+  color: #7061DE;
 }
