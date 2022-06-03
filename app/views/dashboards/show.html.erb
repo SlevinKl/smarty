@@ -1,7 +1,7 @@
-<div class="container my-5 flex-grow-1 margin-bottom-80">
+<div class="container my-5 margin-bottom-80">
 
-  <h1><%= @events.first.starts_at.strftime("%A %_d %B %Y") %>
-  </h1>
+  <h2 class='h2-center'><%= @events.first.starts_at.strftime("%A %_d %B %Y") %>
+  </h2>
 
   <div class="card-trip">
     <%= image_tag "event_demo_day.jpg" %>
