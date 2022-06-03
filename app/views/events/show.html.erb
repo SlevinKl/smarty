@@ -1,5 +1,9 @@
-<div class="container show">
-  <h2 class=''><%= @event.title %></h2>
+<div class="container show flex-grow-1">
+
+  <div class='<%= (@event.title.length > 30) ? 'defiler' : 'regular-title'  %>'>
+    <div><%= @event.title %></div>
+  </div>
+
   <div class="event-date-cont">
     <li class='date-cont'><%= @event.starts_at.strftime("%d %b")%></li>
     <li class='date-cont'><%= @event.starts_at.strftime("%l:%M %p")%></li>
