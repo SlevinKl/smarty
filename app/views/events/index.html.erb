@@ -1,6 +1,6 @@
 
 
-<div class="container my-5 flex-grow-1">
+<div class="container mt-5">
   <div class='d-flex justify-content-around align-items-center mb-5'>
 
     <%= link_to events_path(date: @date - 1.month) do  %>
@@ -13,22 +13,29 @@
 
   </div>
 
-  <div class="mb-5">
-    <%= link_to "Add event", new_event_path, class: 'btn-add-event'%>
-  </div>
-
+  <% date = @events.first.starts_at.strftime("%d") %>
   <% @events.each do |event| %>
-
     <% if @date.strftime("%B") == event.starts_at.strftime("%B") %>
       <ul>
         <div class="">
           <div class=''><%= link_to event_path(event) do %>
               <div class="event-planning-container">
-                <div class='event-day'>
-                  <li><%= event.starts_at.day %></li>
-                </div>
-                <div class='event-info <%=event.category%>' >
-                  <li><strong><%= event.title %></strong> <small> - <%= event.venue %></small></li>
+                <% if event.starts_at.strftime("%d") != date %>
+                <% date = event.starts_at.strftime("%d") %>
+                  <div class='event-day'>
+                    <li><%= event.starts_at.strftime("%a") %> <%= event.starts_at.day %> </li>
+                  </div>
+                <% elsif event == @events.first %>
+                  <div class='event-day'>
+                    <li><%= event.starts_at.strftime("%a") %> <%= event.starts_at.day %>  </li>
+                  </div>
+                <% end %>
+                <div></div>
+                <div class='event-info-wrapper <%=event.category%>'>
+                  <div class='event-info d-flex' >
+                    <div class='overflow-info'><strong><%= event.title %></strong> <small> - <%= event.venue %></small></div>
+                    <div class='see-event-info'><i class="fa-solid fa-eye"></i></div>
+                  </div>
                 </div>
               </div>
             <% end %>
