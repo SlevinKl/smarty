@@ -7,6 +7,23 @@
   }
 }
 
+.bottom-icons > .fa-solid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .wrapper {
   min-height: 90vh;
+}
+
+.cont-icons {
+  position: fixed;
+  bottom: 0;
+  background-color: #fbfefd;
+  padding: 15px 0px;
+}
+
+.central {
+font-size:50px;
 }

@@ -1,6 +1,6 @@
 
 
-<div class="container my-5 flex-grow-1">
+<div class="container mt-5">
   <div class='d-flex justify-content-around align-items-center mb-5'>
 
     <%= link_to events_path(date: @date - 1.month) do  %>
@@ -13,9 +13,6 @@
 
   </div>
 
-  <div class="mb-5">
-    <%= link_to "Add event", new_event_path, class: 'btn-add-event'%>
-  </div>
 
   <% @events.each do |event| %>
 
