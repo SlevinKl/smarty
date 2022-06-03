@@ -1,18 +1,17 @@
 .navbar {
-  display: flex;
   justify-content: center;
   background-color: white;
-  height: 10vh;
+  padding-top: 30px;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-brand img {
   width: 50px;
-  margin-top: 20px;
 }
 
 .navbar h2 {
   font-family: 'Poppins', sans-serif;
-  margin: 20px 0 0 0;
   font-weight: bold;
   font-size: 36px;
 }
