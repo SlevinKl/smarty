@@ -4,7 +4,6 @@
   list-style-type: none;
 }
 
-
 .date-cont {
   border: black 1px solid;
   width: 100px;
@@ -20,19 +19,43 @@
   text-align: center;
 }
 
-h2 {
-  margin: 30px;
-  font-weight: bolder;
-  font-size: 50px;
-  text-align: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .event-info-show {
   list-style-type: none;
   margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 20px;
   text-align: center;
+}
+
+.regular-title {
+  max-width: 30em;
+  margin: 0.75em auto;
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.defiler {
+  max-width: 30em;
+  margin: 1em auto 2em;
+  overflow: hidden;
+}
+
+.defiler > :first-child {
+  font-size: 40px;
+  font-weight: bolder;
+  display: inline-block;                /* modèle de boîte en ligne */
+  padding-right: 2em;                   /* un peu d'espace pour la transition */
+  padding-left: 100%;                   /* placement à droite du conteneur */
+  white-space: nowrap;                  /* pas de passage à la ligne */
+  animation: defilement-rtl 25s infinite linear;
+}
+
+@keyframes defilement-rtl {
+  0% {
+    transform: translate3d(0,0,0);      /* position initiale à droite */
+  }
+  100% {
+    transform: translate3d(-100%,0,0);  /* position finale à gauche */
+  }
 }
