@@ -1,17 +1,13 @@
-<<<<<<< HEAD
-
-<div class=''><%= link_to event_path(@events.first) do %>
-    <div class="event-planning-container">
-      <div class='event-day'>
-        <li><%= @events.first.starts_at.day %></li>
-      </div>
-      <div class='event-info <%=@events.first.category%>' >
-        <li><strong><%= @events.first.title %></strong> <small> - <%= @events.first.venue %></small></li>
-      </div>
-    </div>
-  <% end %>
-=======
 <div class="container flex-grow-1">
-
->>>>>>> 52640554e312a7bce468f8c690a1fec7b858a3de
+  <div class=''><%= link_to event_path(@events.first) do %>
+    <div class="event-planning-container">
+        <div class='event-day'>
+          <li><%= @events.first.starts_at.day %></li>
+        </div>
+        <div class='event-info <%=@events.first.category%>' >
+          <li><strong><%= @events.first.title %></strong> <small> - <%= @events.first.venue %></small></li>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
