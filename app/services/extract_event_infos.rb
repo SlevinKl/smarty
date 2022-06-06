@@ -27,9 +27,16 @@ class ExtractEventInfos
     # dans un rails c :
     # description = "eventbrite\nTalk avec Nicolas Bacca, Co-founder de Ledger\nTalk avec Nicolas Bacca, Co-founder de Ledger\nLe Wagon Gaudelet, 16 villa gaudelet, 75011 Paris, France\nMercredi 18 mai 2022 de 19:00 à 20:30 (heure : France)\nCommande gratuite\nInformations de commande\nCommande N° 3482973199. Commandé par Rayane\nMOULA le 2 mai 2022 14:37\nCommande n° 3482973199\nwwwbCong\nNom\nRayane MOULA\n➡15 ml 115h-Mybride\nDicer le parcours de Nicolas\nBacca, Co-Founder de Ledger:\nLa come française de\nacurisation des\ncryptemonnaies\nReserve la place\n34829731995426966019001\nOrganisez-vous des événements?\nCommencez à vendre en quelques minutes\ngrâce à Eventbrite!\nwww.eventbrite.com"
 
-    venue_n_address = description.match(/^((?<venue>[a-zA-Z\s]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+\s*[a-z\s]*,\s[0-9]+\s[a-zA-Z]+)/)
+    # TEST STATION F
+    # description = "eventbrite\nFighters Day\nAdmission générale\nSTATION F, 55 Boulevard Vincent Auriol, 75013 Paris, France\nSamedi 11 juin 2022 de 10:00 à 19:00 (heure : France)\nCommande gratuite\nInformations de commande\nCommande N° 3786441029. Commandé par Guilhem\nHidalgo le 6 juin 2022 10:22\nCommande n° 3786441029\nSTATION P\nSINGA\nFIGHTERS DAY\n11 juin 2022-STATION F\nO\n37864410295998153399001\nOrganisez-vous des événements?\nCommencez à vendre en quelques minutes\ngrâce à Eventbrite!\nwww.eventbrite.com"
 
-    venue = venue_n_address[:venue]
+    # ce regex ne marche pas à améliorer
+    #  venue_n_address = description.match(/^((?<venue>[\p{L}\s]+),\s)?(?<address>[0-9]+[\p{L}]*\s+[\p{L}]+(\s*[\p{L}]+)*,\s[0-9]+\s[\p{L}]+)/)
+
+    venue_n_address = description.match(/^((?<venue>[a-zA-Z\s]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+(\s*[a-zA-Z]+)*,\s[0-9]+\s[a-zA-Z]+)/)
+
+
+    venue   = venue_n_address[:venue]
     address = venue_n_address[:address]
 
     # cas simple: le titre fait que une seule ligne (sweat smile...)
