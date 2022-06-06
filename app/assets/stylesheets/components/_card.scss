@@ -1,70 +1,119 @@
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+body {
+  background-color: #ffffff;
+}
+
+.info-title {
+  margin-bottom: 20px;
   margin-top: 20px;
-  margin-bottom: 30px;
-  border-radius: 15px;
+  padding-bottom: 10px;
+  border-bottom: #d0d4d8 1px dashed;
 }
 
-.card-trip > img {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 15px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-trip-infos {
-  padding: 20px 20px;
-  text-align: start;
+.ticket-cont {
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-top : 10px;
+.ticket-cont embed {
+  border: black 1px solid;
+  border-right-style: dashed;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+.first-cont {
+  background-color: #7061DE !important;
+  color: white;
 }
 
-.card-product h2 {
+
+.card-event-info {
+  border: black 1px solid;
+  border-radius: 8px;
+  border-left-style: dashed;
+  flex-grow: 1;
+  padding: 10px 15px 0px 15px;
+  background-color: #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-event-info h3 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 0;
-}
 
-.card-product p {
+}
+.card-event-info p {
   font-size: 12px;
-  line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
+
+// .card-trip {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   margin-top: 20px;
+//   margin-bottom: 30px;
+//   border-radius: 15px;
+// }
+
+// .card-trip > img {
+//   height: 220px;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+// .card-trip h2 {
+//   font-size: 30px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-trip p {
+//   font-size: 15px;
+//   opacity: .7;
+//   margin: 0;
+// }
+
+// .card-trip-infos {
+//   padding: 20px 20px;
+//   text-align: start;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: end;
+// }
+
+// .card-product {
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   margin-top : 10px;
+// }
+
+// .card-product img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+
+
+
+
+// .card-product .card-product-infos {
+//   padding: 16px;
+// }
+
+.name-first-event {
+  color: #7061DE;
 }
 
 .name {
