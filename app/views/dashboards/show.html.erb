@@ -1,22 +1,40 @@
 <div class="container my-5 margin-bottom-80">
 
-  <h2 class='h2-center'><%= @events.first.starts_at.strftime("%A %_d %B %Y") %>
-  </h2>
-
-  <div class="card-trip">
-    <%= image_tag "event_demo_day.jpg" %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @events.first.title %></h2>
-        <p><%= @events.first.venue %></p>
+  <% nb = @events.length %>
+  <% if nb == 0 %>
+    <p>Aucun évènement</p>
+  <% else %>
+    <p>Prochain évènement</p>
+    <%= link_to event_path(@events.first), class: "name" do %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= @events.first.title %></h2>
+          <p><%= @events.first.venue %></p>
+          <br>
+          <p><%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+        </div>
       </div>
-      <div>
-        <p><%= @events.first.starts_at.strftime("%l:%M") %></p>
-      </div>
-    </div>
-  </div>
-  <div class="qr_cont">
-    <%= image_tag "qr_code.png", class:"qrcode" %>
-  </div>
+    <% end %>
+    <br>
 
+    <% if nb == 1 %>
+      <p>Aucun autre évènement</p>
+    <% else %>
+      <p>Evènements suivants</p>
+      <% for i in 1..(nb - 1) %>
+        <%= link_to event_path(@events[i]), class: "name" do %>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><%= @events[i].title %></h2>
+              <p><%= @events[i].venue %></p>
+              <br>
+              <p><%= @events[i].starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
