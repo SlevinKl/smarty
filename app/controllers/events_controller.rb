@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   before_action :find_event, only: %i[show edit update]
 
   def index
-    @events = current_user.events.sort_by(&:starts_at)
+    @events = current_user.events.order(:starts_at)
+
+    if params[:category].present?
+      @events = @events.where(category: params[:category])
+    end
+
     if params["date"]
       @date = params["date"].to_date
     else
