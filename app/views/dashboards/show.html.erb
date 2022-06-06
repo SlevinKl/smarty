@@ -34,26 +34,28 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-sm-down">
-      <div class="modal-content">
-        <div class="modal-body mod-card-cont">
-        <div class="modal-header">
-          <h2 class="modal-title me-5 mt-3" id="staticBackdropLabel">Prochain évènement</h2>
-          <button type="button" class="btn-close mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-          <div class='mod-card-code'>
-            <embed src="<%= cl_image_path @events.first.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="200" height="200" class="modal-img">
+  <% if nb > 0 %>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-body mod-card-cont">
+          <div class="modal-header">
+            <h2 class="modal-title me-5 mt-3" id="staticBackdropLabel">Prochain évènement</h2>
+            <button type="button" class="btn-close mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class='mod-card-info'>
-            <h3><%= @events.first.title %></h3>
-            <p><%= @events.first.venue %> <br> <%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+            <div class='mod-card-code'>
+              <embed src="<%= cl_image_path @events.first.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="200" height="200" class="modal-img">
+            </div>
+            <div class='mod-card-info'>
+              <h3><%= @events.first.title %></h3>
+              <p><%= @events.first.venue %> <br> <%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+            </div>
+            <%= link_to 'voir évenement', event_path(@event), class:'btn-sign-in' %>
           </div>
-          <%= link_to 'voir évenement', event_path(@event), class:'btn-sign-in' %>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 
 
 
