@@ -13,6 +13,13 @@
 
   </div>
 
+  <div class='d-flex justify-content-around mb-5' >
+    <div><i class="fa-solid fa-volleyball sport-color"></i></div>
+    <div><i class="fa-solid fa-book culture-color"></i></div>
+    <div><i class="fa-solid fa-plane-departure voyage-color"></i></div>
+    <div class='autres-color'><i class="fa-solid fa-star-of-life"></i></div>
+  </div>
+
   <% date = @events.first.starts_at.strftime("%d") %>
   <% @events.each do |event| %>
     <% if @date.strftime("%B") == event.starts_at.strftime("%B") %>
