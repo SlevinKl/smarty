@@ -2,38 +2,60 @@
 
   <% nb = @events.length %>
   <% if nb == 0 %>
-    <p>Aucun évènement</p>
+    <h2 class='info-title'>Aucun évènement</h2>
   <% else %>
-    <p>Prochain évènement</p>
-    <%= link_to event_path(@events.first), class: "name" do %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><%= @events.first.title %></h2>
-          <p><%= @events.first.venue %></p>
-          <br>
-          <p><%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+    <h2 class='info-title'>Prochain évènement</h2>
+      <div class="ticket-cont" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <embed src="<%= cl_image_path @events.first.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="100" height="100">
+        <div class="card-event-info first-cont">
+          <h3><%= @events.first.title %></h3>
+          <p><%= @events.first.venue %> <br> <%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
         </div>
       </div>
-    <% end %>
-    <br>
     <% if nb == 1 %>
-      <p>Aucun autre évènement</p>
+      <h2 class='info-title'>Aucun autre évènement</h2>
     <% else %>
-      <p>Evènements suivants</p>
+      <h2 class='info-title'>Evènements suivants</h2>
       <% for i in 1..(nb - 1) %>
         <%= link_to event_path(@events[i]), class: "name" do %>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2><%= @events[i].title %></h2>
-              <p><%= @events[i].venue %></p>
-              <br>
-              <p><%= @events[i].starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+          <div class="ticket-cont">
+            <embed src="<%= cl_image_path @events[i].document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="100" height="100">
+            <div class="card-event-info">
+              <h3><%= @events[i].title %></h3>
+              <p><%= @events[i].venue %> <br> <%= @events[i].starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+              <p></p>
             </div>
           </div>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-body mod-card-cont">
+        <div class="modal-header">
+          <h2 class="modal-title me-5 mt-3" id="staticBackdropLabel">Prochain évènement</h2>
+          <button type="button" class="btn-close mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class='mod-card-code'>
+            <embed src="<%= cl_image_path @events.first.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="200" height="200" class="modal-img">
+          </div>
+          <div class='mod-card-info'>
+            <h3><%= @events.first.title %></h3>
+            <p><%= @events.first.venue %> <br> <%= @events.first.starts_at.strftime("%A %e %B %Y at %l:%M") %></p>
+          </div>
+          <%= link_to 'voir évenement', event_path(@event), class:'btn-sign-in' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 </div>
