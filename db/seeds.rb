@@ -51,7 +51,7 @@ event_patrick_01.save!
 event_patrick_02 = Event.new({ title: "Aquarium Tropical", venue: "Palais de la Porte Dorée", starts_at: DateTime.new(2022, 05, 10, 16, 00), address: "293 avenue Daumesnil, 75012 Paris", latitude: "48.8351424", longitude: "2.4093613", category: "Autres", identity_card: true, user: user_patrick, status: "after_ocr" })
 event_patrick_02.document.attach(io: billet2, filename: "OPEN")
 event_patrick_02.save!
-event_patrick_03 = Event.new({ title: "Parc Astérix", venue: "", starts_at: DateTime.new(2022, 05, 15, 11, 00), address: "Parc Astérix, 60128 Plailly", latitude: "49.1329246", longitude: "2.5718844", category: "Autres", identity_card: true, user: user_patrick, status: "after_ocr" })
+event_patrick_03 = Event.new({ title: "Séjour au Parc Astérix", venue: "Parc Astérix", starts_at: DateTime.new(2022, 05, 15, 11, 00), address: "Parc Astérix, 60128 Plailly", latitude: "49.1329246", longitude: "2.5718844", category: "Autres", identity_card: true, user: user_patrick, status: "after_ocr" })
 event_patrick_03.document.attach(io: billet3, filename: "KARAOKE")
 event_patrick_03.save!
 event_patrick_04 = Event.new({ title: "Train Paris-La Baule", venue: "Gare Paris Montparnasse", starts_at: DateTime.new(2022, 05, 25, 12, 00), address: "17 Bd de Vaugirard, 75015 Paris", latitude: "48.8414513", longitude: "2.3190734", category: "Voyage", identity_card: true, user: user_patrick, status: "after_ocr" })
