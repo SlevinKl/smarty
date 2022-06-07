@@ -1,7 +1,5 @@
 class SendEventNotificationJob < ApplicationJob
-
   queue_as :default
-
 
   def perform
     users = User.all

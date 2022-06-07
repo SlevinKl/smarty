@@ -1,8 +1,16 @@
-<div class="container my-5 margin-bottom-80">
+<% if @notification %>
+  <div class='notification-card'>
+    <div>
+      <%= @notification.content %>
+    </div>
+    <div>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+<% end %>
 
-    <% if @notification %>
-      <div> <%= @notification.content %> </div>
-    <% end %>
+<div class="container margin-bottom-80">
+
 
   <% nb = @events.length %>
   <% if nb == 0 %>

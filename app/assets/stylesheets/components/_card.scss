@@ -110,3 +110,19 @@ body {
   margin-bottom: 0;
   margin-top: 20px;
 }
+
+.notification-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: #c0b8ff solid 1px;
+  background-color: #c0b8ff;
+  color: white;
+  margin-top: 10px;
+}
+.notification-card :first-child {
+  flex-grow: 1;
+}
