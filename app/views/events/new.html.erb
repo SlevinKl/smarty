@@ -8,7 +8,7 @@
           <h3 class='my-5'>Ajouter un Document</h3>
           <%= simple_form_for(@event) do |f| %>
             <%= f.input :document, as: :file %>
-            <%= f.submit 'Add', class: 'btn-add-event my-5', data: {action: "click->loader#display"} %>
+            <%= f.submit 'Ajouter', class: 'btn-add-event my-5', data: {action: "click->loader#display"} %>
           <% end %>
         </div>
     </div>

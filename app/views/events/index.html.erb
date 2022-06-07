@@ -4,11 +4,11 @@
   <div class='d-flex justify-content-around align-items-center mb-5'>
 
     <%= link_to events_path(date: @date - 1.month, category: params[:category]) do  %>
-      <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= (@date - 1.month).strftime("%b") %></h5>
+      <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= l((@date - 1.month), format: "%b").capitalize %></h5>
     <% end %>
-    <h3><strong><%= @date.strftime("%^B") %></strong></h3>
+    <h3><strong><%= l((@date), format: "%^B") %></strong></h3>
     <%= link_to events_path(date: @date + 1.month, category: params[:category]) do %>
-      <h5><%= (@date + 1.month).strftime("%b") %> <small> <i class="fa-solid fa-arrow-right"></i> </small></h5>
+      <h5><%= l((@date + 1.month), format: "%b").capitalize %> <small> <i class="fa-solid fa-arrow-right"></i> </small></h5>
     <% end  %>
 
   </div>
@@ -48,11 +48,11 @@
                   <% if event.starts_at.strftime("%d") != date %>
                     <% date = event.starts_at.strftime("%d") %>
                     <div class='event-day'>
-                      <li><%= event.starts_at.strftime("%a") %> <%= event.starts_at.day %></li>
+                      <li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
                     </div>
                   <% elsif event == @events.first %>
                     <div class='event-day'>
-                      <li><%= event.starts_at.strftime("%a") %> <%= event.starts_at.day %></li>
+                      <li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
                     </div>
                   <% end %>
                   <div></div>

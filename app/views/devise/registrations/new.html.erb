@@ -7,9 +7,12 @@
     <div class="form-inputs">
       <div class="d-flex justify-content-between">
         <%= f.input :first_name,
+                    label: "Prénom",
+                    # placeholder: "Prénom, ex: Mathieu",
                     wrapper_html: {class: 'w-50'},
                     required: true%>
         <%= f.input :last_name,
+                    label: "Nom",
                     wrapper_html: {class: 'w-50'},
                     required: true%>
       </div>
@@ -20,6 +23,7 @@
                   input_html: { autocomplete: "email" }%>
 
       <%= f.input :phone,
+                  label: "Téléphone",
                   required: true %>
 
       <div class="d-flex justify-content-between">

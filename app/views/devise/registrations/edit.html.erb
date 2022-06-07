@@ -2,7 +2,8 @@
   <%= link_to :back, class:'btn-back' do %>
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
-  <h2>Modification <%= resource_name.to_s.humanize %></h2>
+  <h2>Modifier mon profil</h2>
+  <% resource_name.to_s.humanize %>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -10,9 +11,11 @@
     <div class="form-inputs">
       <div class="d-flex justify-content-between">
         <%= f.input :first_name,
+                    label: "Prénom",
                     wrapper_html: {class: 'w-50'},
                     required: true%>
         <%= f.input :last_name,
+                    label: "Nom",
                     wrapper_html: {class: 'w-50'},
                     required: true%>
       </div>
@@ -23,14 +26,14 @@
       <% end %>
 
       <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "Laisser vide si vous ne voulez pas le changer",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: "Entre votre mot de passe pour confirmer les changements",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
     </div>
