@@ -39,7 +39,7 @@
   <% if @events.length > 0 %>
     <% date = @events.first.starts_at.strftime("%d") %>
     <% @events.each do |event| %>
-      <% if @date.strftime("%B") == event.starts_at.strftime("%B") %>
+      <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
         <ul>
           <div class="">
             <div class=''>
