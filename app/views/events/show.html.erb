@@ -5,8 +5,8 @@
   </div>
 
   <div class="event-date-cont">
-    <li class='date-cont'><%= @event.starts_at.strftime("%d %b")%></li>
-    <li class='date-cont'><%= @event.starts_at.strftime("%l:%M %p")%></li>
+    <li class='date-cont'><%= l((@event.starts_at), format: ("%d %b"))%></li>
+    <li class='date-cont'><%= l((@event.starts_at), format: ("%l:%M"))%></li>
   </div>
   <div class="event-info-show">
 

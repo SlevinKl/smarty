@@ -1,5 +1,5 @@
 <div class="container mb-5 p-5 flex-grow-1">
-  <h2 class='mb-5'>Log in</h2>
+  <h2 class='mb-5'>Se connecter</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
     <div class="form-inputs">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: 'btn-sign-in' %>
+      <%= f.button :submit, "Se connecter", class: 'btn-sign-in' %>
     </div>
   <% end %>
 
