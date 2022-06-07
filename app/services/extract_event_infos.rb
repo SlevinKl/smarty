@@ -61,7 +61,7 @@ class ExtractEventInfos
       date = description.match(/([0-9]+\s[a-zA-Z]+\s[0-9]{4})/)[1]
       time = description.match(/([0-9]{2}:[0-9]{2})/)[1]
 
-      day, french_month, year = date.split(' ')
+      day, french_month, year = date.split(" ")
       month_number = I18n.t('date.month_names').index(french_month)
 
       # format: 2022-5-18 19:00
@@ -72,7 +72,8 @@ class ExtractEventInfos
         title: title,
         venue: venue,
         address: address,
-        starts_at: starts_at
+        starts_at: starts_at,
+        status: "after_ocr"
       )
     end
   end
