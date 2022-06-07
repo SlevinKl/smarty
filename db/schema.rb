@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_083044) do
   create_table "notifications", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.boolean "read", default: false
     t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

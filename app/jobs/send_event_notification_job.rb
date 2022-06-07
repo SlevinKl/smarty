@@ -2,8 +2,16 @@ class SendEventNotificationJob < ApplicationJob
   queue_as :default
 
   def perform
-    @user = current_user
-    @event = current_user.events.where("starts_at >= ? ", @date).order(:starts_at).first
+    users = User.all
+    users.each do |user|
+      event = user.events.where(starts_at: (Time.current + 12.hours)..(Time.current + 24.hours)).order(:starts_at).first
+      next unless event
+
+      interval = (event.starts_at - Time.current) / 3600
+      next if event.notifications.any?
+
+      Notification.create(title: event.title, content: "Vous avez 1 évènement dans #{interval} heures", event: event)
+    end
 
   end
 end

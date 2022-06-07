@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :events, only: %i[index new create show edit update]
   resource :dashboard, only: :show
+
 end

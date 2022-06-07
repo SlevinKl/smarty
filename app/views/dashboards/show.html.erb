@@ -1,5 +1,9 @@
 <div class="container my-5 margin-bottom-80">
 
+  <% if @notification %>
+    <div><%= @notification.title %></div>
+  <% end %>
+
   <% nb = @events.length %>
   <% if nb == 0 %>
     <h2 class='info-title'>Aucun évènement</h2>
