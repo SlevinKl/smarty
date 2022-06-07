@@ -1,6 +1,5 @@
 <div class="container mb-5 p-5">
-  <%= link_to "Back to Events", events_path, class: 'btn btn-back' %>
-    <%= link_to events_path, class:'btn-back' do %>
+    <%= link_to :back, class:'btn-back' do %>
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
     <div class="form-container mt-1">
@@ -10,7 +9,9 @@
         <%= f.input :venue, placeholder: "Ex: Paris" %>
         <%= f.input :address, placeholder: "Ex: Cow" %>
         <%= f.input :starts_at, html5: true %>
-        <%= f.input :category, collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
+        <div class="div h-200">
+          <%= f.input :category, collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
+        </div>
         <%= f.submit 'Valid', class: 'btn-add-event'%>
       <% end %>
     </div>
