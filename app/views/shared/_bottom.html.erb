@@ -1,9 +1,24 @@
 <div class="container cont-icons">
   <div class="bottom-icons">
-    <%= link_to "", dashboard_path, class: "fa-solid fa-house fa-2x px-3" %>
-    <%= link_to "", events_path, class: "fa-solid fa-calendar-days fa-2x px-3"  %>
-    <%= link_to "", new_event_path, class: "fa-solid fa-circle-plus fa-2x px-3 central" %>
-    <%= link_to "", edit_user_registration_path, class: "fa-solid fa-user-large fa-2x px-3" %>
-    <%= link_to "", destroy_user_session_path, data: {turbo_method: :delete}, class: "fa-solid fa-arrow-right-from-bracket fa-2x px-3"  %>
+    <%= link_to dashboard_path, class: "fa-solid" do %>
+      <%= image_tag('componentssvg/House.svg') %>
+    <% end %>
+    <%= link_to events_path, class: "fa-solid" do %>
+      <%= image_tag('componentssvg/calendar.svg') %>
+    <% end %>
+    <%= link_to new_event_path, class: "fa-solid bottom-btn" do %>
+      <%= image_tag('componentssvg/btn-add.svg') %>
+    <% end %>
+    <%= link_to edit_user_registration_path, class: "fa-solid" do %>
+      <%= image_tag('componentssvg/account.svg') %>
+    <% end %>
+    <%= link_to "", destroy_user_session_path, data: {turbo_method: :delete}, class: "fa-solid fa-arrow-right-from-bracket fa-lg "  %>
+    <%=  %>
   </div>
 </div>
+
+  <%#= embedded_svg('Rectangle.svg') %>
+    <%# <%= link_to embedded_svg('House.svg'), dashboard_path, class:"fa-solid" %>
+    <%# <%= link_to embedded_svg('calendar.svg'), events_path, class:"fa-solid" %>
+    <%#= link_to embedded_svg('btn-add.svg'), new_event_path, class:"fa-solid" %>
+    <%# <%= link_to embedded_svg('account.svg'), edit_user_registration_path, class:"fa-solid" %>

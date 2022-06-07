@@ -1,10 +1,17 @@
+.cont-icons {
+  position: fixed;
+  bottom: 0;
+  // background-color: #fbfefd;
+  background-image: asset-url('componentssvg/Rectangle.svg');
+  background-position: center;
+  background-size: cover;
+  padding: 12px 0px;
+}
 .bottom-icons {
   display: flex;
   text-align: center;
-  justify-content: center;
-  a {
-    color: #7061DE;
-  }
+  justify-content: space-evenly;
+  padding-top: 30px;
 }
 
 .bottom-icons > .fa-solid {
@@ -13,17 +20,32 @@
   justify-content: center;
 }
 
+.fa-lg {
+  color: black;
+}
+
 .wrapper {
   min-height: 90vh;
 }
 
-.cont-icons {
-  position: fixed;
-  bottom: 0;
-  background-color: #fbfefd;
-  padding: 15px 0px;
-}
 
 .central {
 font-size:70px;
+}
+
+.bottom-btn {
+  > img.first-child {
+    display: block;
+  }
+  > img.last-child {
+    display: none
+  }
+}
+.bottom-btn:hover {
+  > img.first-child {
+    display: none;
+  }
+  > img.last-child {
+    display: block;
+  }
 }
