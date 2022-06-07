@@ -36,13 +36,10 @@ class ExtractEventInfos
     # TEST DEMO DAY
     # description = "eventbrite\nDemo Day\nDemo day\nLe Wagon, 16 Villa Gaudelet, 75011 Paris, France\nVendredi 10 juin 2022 de 16:00 à 18:00 (heure : France)\nCommande gratuite\nInformations de commande\nCommande N° 3796326919. Commandé par Rayane\nMOULA le 7 juin 2022 12:20\nCommande n° 3796326919\n37963269196017012849001\nOrganisez-vous des événements?\nCommencez à vendre en quelques minutes\ngrâce à Eventbrite!\nwww.eventbrite.com"
 
-<<<<<<< HEAD
     # venue_n_address = description.match(/^((?<venue>[a-zA-Z ]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+(\s*[a-zA-Z]+)*,\s[0-9]+\s[a-zA-Z]+)/)
-=======
     if venue_n_address != nil
       venue   = venue_n_address[:venue]
       address = venue_n_address[:address]
->>>>>>> master
 
       # cas simple: le titre fait que une seule ligne (sweat smile...)
       # title = description.split("\n")[1]
