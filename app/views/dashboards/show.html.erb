@@ -1,8 +1,8 @@
 <div class="container my-5 margin-bottom-80">
 
-  <% if @notification %>
-    <div><%= @notification.title %></div>
-  <% end %>
+    <% if @notification %>
+      <div> <%= @notification.content %> </div>
+    <% end %>
 
   <% nb = @events.length %>
   <% if nb == 0 %>

@@ -1,5 +1,7 @@
 class SendEventNotificationJob < ApplicationJob
+
   queue_as :default
+
 
   def perform
     users = User.all
@@ -10,8 +12,9 @@ class SendEventNotificationJob < ApplicationJob
       interval = (event.starts_at - Time.current) / 3600
       next if event.notifications.any?
 
-      Notification.create(title: event.title, content: "Vous avez 1 évènement dans #{interval} heures", event: event)
+      Notification.create(title: event.title,
+                          content: "Vous avez 1 évènement dans #{interval.round(0)} heures",
+                          event: event)
     end
-
   end
 end

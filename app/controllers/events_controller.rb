@@ -49,6 +49,7 @@ class EventsController < ApplicationController
     redirect_to event_path(@event)
   end
 
+
   private
 
   def event_params
