@@ -15,3 +15,6 @@ application.register("loader", LoaderController)
 
 import MapController from "./map_controller.js"
 application.register("map", MapController)
+
+import NotificationSubscriptionController from "./notification_subscription_controller.js"
+application.register("notification-subscription", NotificationSubscriptionController)

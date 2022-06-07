@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   CATEGORIES = %w[Sport Culture Voyage Autres]
 
   has_one_attached :document
+  has_many :notifications, dependent: :destroy
   belongs_to :user
   validates :title, :venue, :starts_at, :address, :category, presence: true, if: -> { status == "after_ocr" }
   validates :category, inclusion: { in: CATEGORIES }, if: -> { status == "after_ocr" }

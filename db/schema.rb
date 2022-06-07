@@ -60,6 +60,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_144300) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.boolean "read", default: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_notifications_on_event_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -71,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_144300) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -78,4 +89,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_144300) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "events", "users"
+  add_foreign_key "notifications", "events"
 end

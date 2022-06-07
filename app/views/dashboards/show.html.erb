@@ -1,4 +1,11 @@
-<div class="container my-5 margin-bottom-80">
+<div data-controller="notification-subscription"  data-notification-subscription-target="notifications" data-notification-subscription-current-user-id-value="<%= current_user.id%>" > <%# %>
+  <% if @notification %>
+      <%= render "notifications/notification", notification: @notification %>
+  <% end %>
+</div>
+
+<div class="container margin-bottom-80">
+
 
   <% nb = @events.length %>
   <% if nb == 0 %>
