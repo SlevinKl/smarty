@@ -10,9 +10,12 @@ class SendEventNotificationJob < ApplicationJob
       interval = (event.starts_at - Time.current) / 3600
       next if event.notifications.any?
 
-      Notification.create(title: event.title,
-                          content: "Vous avez 1 évènement dans #{interval.round(0)} heures",
-                          event: event)
+      notif = Notification.create(title: event.title,
+                                  content: "Vous avez 1 évènement dans #{interval.round(0)} heures",
+                                  event: event)
+      # broadcast notif to current_user => render partial
+      NotificationChannel.broadcast_to(user, ApplicationController.render(partial: "notifications/notification",
+                                                                          locals: { notification: notif }))
     end
   end
 end

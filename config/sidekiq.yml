@@ -12,5 +12,6 @@
 
 :schedule:
   send_event_notification_job:
-    every: 45 minutes
+    # cron: '0 * * * * *'
+    every: 30 seconds
     class: SendEventNotificationJob

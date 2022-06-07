@@ -1,0 +1,10 @@
+<div class='notification-card'>
+  <div>
+    <%= notification.content %>
+  </div>
+  <div>
+    <%= link_to read_notification_path(notification), data:{turbo_method: :patch} do %>
+    <i class="fa-solid fa-xmark"></i>
+    <% end %>
+  </div>
+</div>
