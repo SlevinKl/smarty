@@ -8,8 +8,8 @@ export default class extends Controller {
   }
 
   choose_voyage() {
-    console.log("connected choose")
-    console.log(this.voyageTarget);
+    console.log("connected choose voyage")
+    // tconsole.log(this.voyageTarget);
     // this.voyageTarget.classList.toggle("fa-2x");
     // this.cultureTarget.classList.remove("fa-2x");
     // this.sportTarget.classList.remove("fa-2x");
@@ -17,8 +17,8 @@ export default class extends Controller {
   }
 
   choose_culture() {
-    console.log("connected choose")
-    console.log(this.cultureTarget);
+    console.log("connected choose culture")
+    // tconsole.log(this.cultureTarget);
     // this.cultureTarget.classList.toggle("fa-2x");
     // this.sportTarget.classList.remove("fa-2x");
     // this.voyageTarget.classList.remove("fa-2x");
@@ -26,8 +26,8 @@ export default class extends Controller {
   }
 
   choose_sport() {
-    console.log("connected choose")
-    console.log(this.sportTarget);
+    console.log("connected choose sport")
+    // tconsole.log(this.sportTarget);
     // this.sportTarget.classList.toggle("fa-2x");
     // this.cultureTarget.classList.remove("fa-2x");
     // this.voyageTarget.classList.remove("fa-2x");
@@ -35,8 +35,8 @@ export default class extends Controller {
   }
 
   choose_autres() {
-    console.log("connected choose")
-    console.log(this.autresTarget);
+    console.log("connected choose autres")
+    // tconsole.log(this.autresTarget);
     // this.autresTarget.classList.toggle("fa-2x");
     // this.cultureTarget.classList.remove("fa-2x");
     // this.voyageTarget.classList.remove("fa-2x");
