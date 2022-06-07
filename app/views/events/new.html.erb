@@ -1,9 +1,9 @@
 <div class="container flex-grow-1">
   <div data-controller="loader">
     <div class="container mb-5 p-5">
-        <%= link_to events_path, class:'btn-back' do %>
-        <i class="fa-solid fa-angle-left"></i>
-      <% end %>
+        <%= link_to :back, class:'btn-back' do %>
+          <i class="fa-solid fa-angle-left"></i>
+        <% end %>
         <div class="form-container mt-1">
           <h3 class='my-5'>Ajouter un Document</h3>
           <%= simple_form_for(@event) do |f| %>
