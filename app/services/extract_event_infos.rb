@@ -30,11 +30,13 @@ class ExtractEventInfos
     # TEST STATION F
     # description = "eventbrite\nFighters Day\nAdmission générale\nSTATION F, 55 Boulevard Vincent Auriol, 75013 Paris, France\nSamedi 11 juin 2022 de 10:00 à 19:00 (heure : France)\nCommande gratuite\nInformations de commande\nCommande N° 3786441029. Commandé par Guilhem\nHidalgo le 6 juin 2022 10:22\nCommande n° 3786441029\nSTATION P\nSINGA\nFIGHTERS DAY\n11 juin 2022-STATION F\nO\n37864410295998153399001\nOrganisez-vous des événements?\nCommencez à vendre en quelques minutes\ngrâce à Eventbrite!\nwww.eventbrite.com"
 
-    # ce regex ne marche pas à améliorer
-    #  venue_n_address = description.match(/^((?<venue>[\p{L}\s]+),\s)?(?<address>[0-9]+[\p{L}]*\s+[\p{L}]+(\s*[\p{L}]+)*,\s[0-9]+\s[\p{L}]+)/)
+    # ce regex  marche
+     venue_n_address = description.match(/^((?<venue>[\p{L} ]+),\s)?(?<address>[0-9]+[\p{L}]*\s+[\p{L}]+(\s*[\p{L}]+)*,\s[0-9]+\s[\p{L}]+)/)
 
-    venue_n_address = description.match(/^((?<venue>[a-zA-Z\s]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+(\s*[a-zA-Z]+)*,\s[0-9]+\s[a-zA-Z]+)/)
+    # TEST DEMO DAY
+    # description = "eventbrite\nDemo Day\nDemo day\nLe Wagon, 16 Villa Gaudelet, 75011 Paris, France\nVendredi 10 juin 2022 de 16:00 à 18:00 (heure : France)\nCommande gratuite\nInformations de commande\nCommande N° 3796326919. Commandé par Rayane\nMOULA le 7 juin 2022 12:20\nCommande n° 3796326919\n37963269196017012849001\nOrganisez-vous des événements?\nCommencez à vendre en quelques minutes\ngrâce à Eventbrite!\nwww.eventbrite.com"
 
+    # venue_n_address = description.match(/^((?<venue>[a-zA-Z ]+),\s)?(?<address>[0-9]+[a-zA-Z]*\s+[a-zA-Z]+(\s*[a-zA-Z]+)*,\s[0-9]+\s[a-zA-Z]+)/)
 
     venue   = venue_n_address[:venue]
     address = venue_n_address[:address]
