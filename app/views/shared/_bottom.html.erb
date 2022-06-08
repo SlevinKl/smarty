@@ -1,17 +1,38 @@
 <div class="container cont-icons">
   <div class="bottom-icons">
-    <%= link_to dashboard_path, class: "fa-solid" do %>
-      <%= image_tag('componentssvg/House.svg') %>
+    <%  unless current_page?(dashboard_path) %>
+      <%= link_to dashboard_path, class: "fa-solid" do %>
+        <%= image_tag('componentssvg/House.svg') %>
+      <% end %>
+    <% else %>
+      <%= link_to dashboard_path, class: "fa-solid" do %>
+        <%= image_tag('componentssvg/Houses.svg') %>
+      <% end %>
     <% end %>
-    <%= link_to events_path, class: "fa-solid" do %>
+    <%  unless current_page?(events_path) %>
+      <%= link_to events_path, class: "fa-solid" do %>
       <%= image_tag('componentssvg/calendar.svg') %>
     <% end %>
+    <% else %>
+      <%= link_to events_path, class: "fa-solid" do %>
+        <%= image_tag('componentssvg/calendars.svg') %>
+      <% end %>
+    <% end %>
+
     <%= link_to new_event_path, class: "fa-solid bottom-btn" do %>
       <%= image_tag('componentssvg/btn-add.svg') %>
     <% end %>
-    <%= link_to edit_user_registration_path, class: "fa-solid" do %>
+
+    <%  unless current_page?(edit_user_registration_path) %>
+      <%= link_to edit_user_registration_path, class: "fa-solid" do %>
       <%= image_tag('componentssvg/account.svg') %>
     <% end %>
+    <% else %>
+      <%= link_to dashboard_path, class: "fa-solid" do %>
+        <%= image_tag('componentssvg/accounts.svg') %>
+      <% end %>
+    <% end %>
+
     <%= link_to "", destroy_user_session_path, data: {turbo_method: :delete}, class: "fa-solid fa-arrow-right-from-bracket fa-lg "  %>
     <%=  %>
   </div>
