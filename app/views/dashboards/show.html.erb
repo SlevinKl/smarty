@@ -53,11 +53,11 @@
             <button type="button" class="btn-close mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
             <div class='mod-card-code'>
-              <embed src="<%= cl_image_path @events.first.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="200" height="200" class="modal-img">
+              <embed src="<%= cl_image_path @event.document.key, format: "png", gravity: "north_east", quality:"auto:best",width: 150, height: 150, x: 142, y: 457, crop: "crop" %>" width="200" height="200" class="modal-img">
             </div>
             <div class='mod-card-info'>
-              <h3><%= @events.first.title %></h3>
-              <p><%= @events.first.venue %> <br> <%= l((@events.first.starts_at), format: ("%A %e %B %Y à %k:%M")).capitalize %></p>
+              <h3><%= @event.title %></h3>
+              <p><%= @event.venue %> <br> <%= l((@event.starts_at), format: ("%A %e %B %Y à %k:%M")).capitalize %></p>
             </div>
             <%= link_to 'voir évenement', event_path(@event), class:'btn-sign-in' %>
           </div>

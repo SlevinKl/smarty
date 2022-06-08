@@ -36,34 +36,35 @@
 
   <% if @events.length > 0 %>
     <% date = @events.first.starts_at.strftime("%d") %>
-  <div class="border-start ps-3 ms-3 border-grey">
-    <% @events.each do |event| %>
-      <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
-        <ul>
-          <div class="">
-            <div class=''>
-              <%= link_to event_path(event) do %>
-                <div class="event-planning-container">
-                  <% if event.starts_at.strftime("%d") != date %>
-                    <% date = event.starts_at.strftime("%d") %>
-                    <div class='event-day'>
-                      <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")).capitalize %> <%= event.starts_at.day %></li>
-                    </div>
-                  <% elsif event == @events.first %>
-                    <div class='event-day'>
-                      <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
-                    </div>
-                  <% end %>
-                  <div></div>
-                  <div class='event-info-wrapper <%=event.category%>'>
-                    <div class='event-info d-flex' >
-                      <div class='overflow-info'><strong><%= event.title %></strong> <small> - <%= event.venue %></small></div>
-                      <div class='see-event-info'><i class="fa-solid fa-eye"></i></div>
+    <div class="border-start ps-3 ms-3 border-grey">
+      <% @events.each do |event| %>
+        <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
+          <ul>
+            <div class="">
+              <div class=''>
+                <%= link_to event_path(event) do %>
+                  <div class="event-planning-container">
+                    <% if event.starts_at.strftime("%d") != date %>
+                      <% date = event.starts_at.strftime("%d") %>
+                      <div class='event-day'>
+                        <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")).capitalize %> <%= event.starts_at.day %></li>
+                      </div>
+                    <% elsif event == @events.first %>
+                      <div class='event-day'>
+                        <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")).capitalize %> <%= event.starts_at.day %></li>
+                      </div>
+                    <% end %>
+                    <div></div>
+                    <div class='event-info-wrapper <%=event.category%>'>
+                      <div class='event-info d-flex' >
+                        <div class='overflow-info'><strong><%= event.title %></strong> <div><small class="block"><%= event.venue[0, 22] %> - <%= l((event.starts_at), format: ("%k:%M")) %></small></div></div>
+                        <div><%= image_tag('componentssvg/icone-doc.svg') %></div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                <% end %>
               </div>
-            <% end %>
+            </div>
           </ul>
         <% end %>
       <% end %>
