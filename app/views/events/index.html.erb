@@ -2,15 +2,13 @@
 
 <div class="container mt-5 margin-bottom-80">
   <div class='d-flex justify-content-around align-items-center mb-5'>
-
     <%= link_to events_path(date: @date - 1.month, category: params[:category]) do  %>
       <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= l((@date - 1.month), format: "%b").capitalize %></h5>
     <% end %>
-    <h3><strong><%= l((@date), format: "%^B") %></strong></h3>
+    <h3><strong><%= l(@date, format: "%^B") %></strong> <small><%= if @date.year != @year then l(@date, format: "%y") end %></small></h3>
     <%= link_to events_path(date: @date + 1.month, category: params[:category]) do %>
       <h5><%= l((@date + 1.month), format: "%b").capitalize %> <small> <i class="fa-solid fa-arrow-right"></i> </small></h5>
     <% end  %>
-
   </div>
 
   <div class='d-flex justify-content-around mb-5' data-controller="category" >
@@ -38,6 +36,8 @@
 
   <% if @events.length > 0 %>
     <% date = @events.first.starts_at.strftime("%d") %>
+<<<<<<< Updated upstream
+  <div class="border-start ps-3 ms-3 border-grey">
     <% @events.each do |event| %>
       <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
         <ul>
@@ -48,11 +48,11 @@
                   <% if event.starts_at.strftime("%d") != date %>
                     <% date = event.starts_at.strftime("%d") %>
                     <div class='event-day'>
-                      <li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
+                      <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")).capitalize %> <%= event.starts_at.day %></li>
                     </div>
                   <% elsif event == @events.first %>
                     <div class='event-day'>
-                      <li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
+                      <div class="bullet">●</div><li><%= l((event.starts_at), format: ("%a")) %> <%= event.starts_at.day %></li>
                     </div>
                   <% end %>
                   <div></div>
@@ -63,11 +63,11 @@
                     </div>
                   </div>
                 </div>
-              <% end %>
-            </div>
-          </div>
-        </ul>
+              </div>
+            <% end %>
+          </ul>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
