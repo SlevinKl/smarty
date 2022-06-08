@@ -36,7 +36,6 @@
 
   <% if @events.length > 0 %>
     <% date = @events.first.starts_at.strftime("%d") %>
-<<<<<<< Updated upstream
   <div class="border-start ps-3 ms-3 border-grey">
     <% @events.each do |event| %>
       <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
