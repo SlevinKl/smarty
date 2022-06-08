@@ -13,6 +13,10 @@ class EventsController < ApplicationController
     else
       @date = Date.today
     end
+
+    @year = Date.today.year
+
+    @events = @events.where(starts_at: @date.beginning_of_month..@date.end_of_month)
   end
 
   def show
