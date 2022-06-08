@@ -7,7 +7,7 @@
       <div class="notification-card-index">
         <div class="notification-head">
           <h3> <%= notif.title %> </h3>
-          <p> <small> <%=((Time.current - notif.created_at) / 60).round(0) %> minutes ago </small></p>
+          <p> <small> Il y a <%=((Time.current - notif.created_at) / 60).round(0) %> minutes </small></p>
         </div>
         <p> <small><strong><%= notif.content %></strong></small></p>
       </div>

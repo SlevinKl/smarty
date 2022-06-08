@@ -2,10 +2,10 @@ class NotificationsController < ApplicationController
 
   def index
     @notifications = Notification.all.order(:created_at)
-    # @notifications.each do |notif|
-    #   notif.read = true
-    #   notif.save
-    # end
+    @notifications.each do |notif|
+      notif.read = true
+      notif.save
+    end
   end
 
 
