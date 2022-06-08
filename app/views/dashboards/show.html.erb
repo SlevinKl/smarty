@@ -1,6 +1,8 @@
 <div data-controller="notification-subscription"  data-notification-subscription-target="notifications" data-notification-subscription-current-user-id-value="<%= current_user.id%>" > <%# %>
   <% if @notification %>
-      <%= render "notifications/notification", notification: @notification %>
+      <%= link_to notifications_path do %>
+        <%= render "notifications/notification", notification: @notification %>
+      <% end %>
   <% end %>
 </div>
 

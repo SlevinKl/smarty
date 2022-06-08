@@ -4,7 +4,7 @@ class SendEventNotificationJob < ApplicationJob
   def perform
     users = User.all
     users.each do |user|
-      event = user.events.where(starts_at: (Time.current + 12.hours)..(Time.current + 24.hours)).order(:starts_at).first
+      event = user.events.where(starts_at: (Time.current + 12.hours)..(Time.current + 72.hours)).order(:starts_at).first
       next unless event
 
       interval = (event.starts_at - Time.current) / 3600

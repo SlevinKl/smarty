@@ -91,7 +91,7 @@ body {
   border-radius: 16px;
   flex-grow: 1;
   border-top-style: dashed;
-  background-color: #7061DE;
+  background-color: rgb(112, 97, 222);
   color: white;
   padding: 40px;
   width: 75%;
@@ -123,6 +123,47 @@ body {
   color: white;
   margin-top: 10px;
 }
+
+.notification-card :last-child {
+  color: #ffffff;
+}
+
 .notification-card :first-child {
   flex-grow: 1;
+  color: #ffffff;
+}
+
+.notification-card-index {
+  border-radius: 12px;
+  border: black solid 1px;
+  background-color: #EAECEF;
+  box-shadow: 0 4px 16px rgba(112, 97, 222, 0.1);
+  color: black;
+  opacity: 0.8;
+  margin: 20px 10px;
+  padding: 10px 25px;
+  p {
+    margin-bottom: 0;
+    opacity: 0.7;
+  };
+}
+
+.notification-head  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  p {
+    margin-bottom: 0;
+    min-width: 110px;
+    opacity: 0.7;
+  };
+  h3 {
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    font-size: 20px;
+  }
 }
