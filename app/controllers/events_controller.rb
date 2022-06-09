@@ -24,9 +24,18 @@ class EventsController < ApplicationController
   end
 
   def show
+
+    category_marker_class_mapping = {
+      "Sport"   => "fa-volleyball sport-color",
+      "Culture" => "fa-book culture-color",
+      "Voyage"  => "fa-plane-departure voyage-color",
+      "Autres"  => "fa-star-of-life autres-color"
+    }
+
     @marker = {
       lat: @event.latitude,
-      lng: @event.longitude
+      lng: @event.longitude,
+      class_name: "fa-solid fa-2x #{category_marker_class_mapping[@event.category]}"
     }
   end
 
