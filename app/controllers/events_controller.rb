@@ -26,14 +26,17 @@ class EventsController < ApplicationController
 
   def show
 
+   if @event.user != current_user
+    flash[:alert] = "Vous ne pouvez pas acceder à cette page"
+    redirect_to root_path
+   end
+
     category_marker_class_mapping = {
       "Sport"   => "fa-volleyball sport-color",
       "Culture" => "fa-book culture-color",
       "Voyage"  => "fa-plane-departure voyage-color",
       "Autres"  => "fa-star-of-life autres-color"
     }
-
-    @user = current_user
 
     @marker = {
       lat: @event.latitude,
