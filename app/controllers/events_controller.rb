@@ -21,7 +21,6 @@ class EventsController < ApplicationController
     # event.starts_at - Time.current > 0
 
     @next_event = @events.where(starts_at: Time.current..).first
-
   end
 
   def show
