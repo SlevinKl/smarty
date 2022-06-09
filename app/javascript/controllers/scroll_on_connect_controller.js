@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="scroll-on-connect"
 export default class extends Controller {
   connect() {
-    console.log("connected")
+
     // console.log((this.element.getBoundingClientRect().top))
     // console.log((document.body.getBoundingClientRect().top))
     // this.element.scrollIntoView({block: "center"});
