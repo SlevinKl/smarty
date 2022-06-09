@@ -1,10 +1,38 @@
 
 
+<<<<<<< Updated upstream
 <div class="container margin-bottom-80">
   <div class='sticky-head-events'>
     <div class='d-flex justify-content-around align-items-center mb-4'>
       <%= link_to events_path(date: @date - 1.month, category: params[:category]) do  %>
         <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= l((@date - 1.month), format: "%b").capitalize %></h5>
+=======
+<div class="container2 mt-5 margin-bottom-80">
+  <div class='d-flex justify-content-around align-items-center mb-5'>
+    <%= link_to events_path(date: @date - 1.month, category: params[:category]) do  %>
+      <h5> <small> <i class="fa-solid fa-arrow-left-long"></i> </small> <%= l((@date - 1.month), format: "%b").capitalize %></h5>
+    <% end %>
+    <h3><strong><%= l(@date, format: "%^B") %></strong> <small><%= if @date.year != @year then l(@date, format: "%y") end %></small></h3>
+    <%= link_to events_path(date: @date + 1.month, category: params[:category]) do %>
+      <h5><%= l((@date + 1.month), format: "%b").capitalize %> <small> <i class="fa-solid fa-arrow-right"></i> </small></h5>
+    <% end  %>
+  </div>
+
+  <div class='d-flex justify-content-around mb-5' data-controller="category" >
+    <div data-action="click->category#choose_sport">
+      <%= link_to events_path(date: @date, category: (params[:category] == "Sport" ? nil : "Sport")) do %>
+        <i class="fa-solid <%= 'fa-2x' if params[:category] == "Sport" %> fa-volleyball <%= if params[:category] == "Culture" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'sport-color' end %>" data-category-target="sport"></i>
+      <% end %>
+    </div>
+    <div data-action="click->category#choose_culture">
+      <%= link_to events_path(date: @date, category: (params[:category] == "Culture" ? nil : "Culture")) do %>
+        <i class="fa-solid <%= 'fa-2x' if params[:category] == "Culture" %> fa-book <%= if params[:category] == "Sport" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'culture-color' end %>" data-category-target="culture"></i>
+      <% end %>
+    </div>
+    <div data-action="click->category#choose_voyage">
+      <%= link_to events_path(date: @date, category: (params[:category] == "Voyage" ? nil : "Voyage")) do %>
+        <i class="fa-solid <%= 'fa-2x' if params[:category] == "Voyage" %> fa-plane-departure <%= if params[:category] == "Sport" || params[:category] == "Culture" || params[:category] == "Autres" then 'grey-color' else 'voyage-color' end %>" data-category-target="voyage"></i>
+>>>>>>> Stashed changes
       <% end %>
       <h3><strong><%= l(@date, format: "%^B") %></strong> <small><%= if @date.year != @year then l(@date, format: "%y") end %></small></h3>
       <%= link_to events_path(date: @date + 1.month, category: params[:category]) do %>
