@@ -4,15 +4,16 @@
   <% end %>
     <div class="form-container mt-1">
       <h3>Informations</h3>
+      <br>
       <%= simple_form_for(@event) do |f| %>
-        <%= f.input :title, placeholder: "Ex: Albert" %>
-        <%= f.input :venue, placeholder: "Ex: Paris" %>
-        <%= f.input :address, placeholder: "Ex: Cow" %>
-        <%= f.input :starts_at, html5: true %>
+        <%= f.input :title, label: "Titre", placeholder: "Ex: Le Lac des Cygnes" %>
+        <%= f.input :venue, label: "Lieu", placeholder: "Ex: Opéra Garnier" %>
+        <%= f.input :address, label: "Adresse", placeholder: "Ex: Place de l'Opéra 75009 Paris" %>
+        <%= f.input :starts_at, label: "Date", html5: true %>
         <div class="div h-200">
-          <%= f.input :category, collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
+          <%= f.input :category, label: "Catégorie", collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
         </div>
-        <%= f.submit 'Valid', class: 'btn-add-event'%>
+        <%= f.submit 'Valider', class: 'btn-add-event'%>
       <% end %>
     </div>
 </div>
