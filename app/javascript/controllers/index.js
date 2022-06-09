@@ -18,3 +18,6 @@ application.register("map", MapController)
 
 import NotificationSubscriptionController from "./notification_subscription_controller.js"
 application.register("notification-subscription", NotificationSubscriptionController)
+
+import ScrollOnConnectController from "./scroll_on_connect_controller.js"
+application.register("scroll-on-connect", ScrollOnConnectController)

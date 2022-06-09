@@ -12,11 +12,9 @@ export default class extends Controller {
       { received: data => this.notificationsTarget.insertAdjacentHTML("beforeend", data) }
 
     )
-    console.log(`Subscribed`)
   }
 
   disconnect() {
-    console.log("Unsubscribed from the chatroom")
     this.channel.unsubscribe()
   }
 }

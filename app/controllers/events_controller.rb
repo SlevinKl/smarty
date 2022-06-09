@@ -17,6 +17,11 @@ class EventsController < ApplicationController
     @year = Date.today.year
 
     @events = @events.where(starts_at: @date.beginning_of_month..@date.end_of_month)
+
+    # event.starts_at - Time.current > 0
+
+    @next_event = @events.where(starts_at: Time.current..).first
+
   end
 
   def show
