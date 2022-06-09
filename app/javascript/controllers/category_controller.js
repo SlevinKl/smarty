@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["voyage", "culture", "sport", "autres"]
   connect() {
-    console.log("connected")
   }
 
   choose_voyage() {

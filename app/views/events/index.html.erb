@@ -42,8 +42,7 @@
       <% @events.each do |event| %>
         <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
           <ul>
-            <div class="">
-              <div class=''>
+            <div <%= 'data-controller=scroll-on-connect' if @next_event == event %>>
                 <%= link_to event_path(event) do %>
                   <div class="event-planning-container">
                     <% if event.starts_at.strftime("%d") != date %>
@@ -65,7 +64,6 @@
                     </div>
                   </div>
                 <% end %>
-              </div>
             </div>
           </ul>
         <% end %>
