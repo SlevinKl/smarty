@@ -37,12 +37,14 @@ body {
   padding: 10px 15px 0px 15px;
   background-color: #e9ecef;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 70%;
 }
 
 .card-event-info h3 {
   font-size: 19px;
   font-weight: bolder;
   margin: 0;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -52,6 +54,7 @@ body {
   opacity: .7;
   margin-bottom: 0;
   margin-top: 4px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
