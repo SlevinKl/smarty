@@ -38,7 +38,7 @@
 
   <% if @events.length > 0 %>
     <% date = @events.first.starts_at.strftime("%d") %>
-    <div class="border-start ps-3 ms-3 border-grey">
+    <div class="border1 ps-3 ms-1 border-grey">
       <% @events.each do |event| %>
         <% if event.starts_at != nil && @date.strftime("%B") == event.starts_at.strftime("%B")  %>
           <ul>
@@ -58,8 +58,15 @@
                     <div></div>
                     <div class='event-info-wrapper <%=event.category%>'>
                       <div class='event-info d-flex' >
-                        <div class='overflow-info'><strong><%= event.title %></strong> <div><small class="block"><%= event.venue[0, 22] %> - <%= l((event.starts_at), format: ("%k:%M")) %></small></div></div>
-                        <div><%= image_tag('componentssvg/icone-doc.svg') %></div>
+                        <div class='overflow-info'>
+                          <strong><%= event.title %></strong>
+                          <div>
+                            <small>
+                              <span><%= truncate(event.venue, length: 25) %></span> - <span><%= l((event.starts_at), format: ("%k:%M")) %></span>
+                            </small>
+                          </div>
+                        </div>
+                        <div class='icone-doc'><%= image_tag('componentssvg/icone-doc.svg') %></div>
                       </div>
                     </div>
                   </div>
