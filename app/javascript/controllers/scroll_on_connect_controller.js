@@ -7,6 +7,6 @@ export default class extends Controller {
     // console.log((this.element.getBoundingClientRect().top))
     // console.log((document.body.getBoundingClientRect().top))
     // this.element.scrollIntoView({block: "center"});
-    window.scrollTo({top: (this.element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 300)});
+    window.scrollTo({top: (this.element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 400)});
   }
 }
