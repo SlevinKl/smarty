@@ -19,7 +19,6 @@
         <div class="card-event-info first-cont">
           <h3><%= @events.first.title %></h3>
           <p><%= @events.first.venue %> <br> <%= l((@events.first.starts_at), format: ("%A %e %B %Y à %k:%M")).capitalize %></p>
-          <%= console %>
         </div>
       </div>
     <% if nb == 1 %>
