@@ -1,8 +1,8 @@
-<div class="container margin_bottom">
+<div class="container4 margin_bottom">
   <%= link_to :back, class:'btn-back' do %>
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
-  <h2>Modifier mon profil</h2>
+  <h2 class="mt-3 mb-4">Modifier mon profil</h2>
   <% resource_name.to_s.humanize %>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
