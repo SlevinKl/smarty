@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :find_event, only: %i[show edit update]
+  before_action :user
 
   def index
     @events = current_user.events.order(:starts_at)
@@ -31,6 +32,8 @@ class EventsController < ApplicationController
       "Voyage"  => "fa-plane-departure voyage-color",
       "Autres"  => "fa-star-of-life autres-color"
     }
+
+    @user = current_user
 
     @marker = {
       lat: @event.latitude,
@@ -79,4 +82,9 @@ class EventsController < ApplicationController
   def find_event
     @event = Event.find(params[:id])
   end
+
+  def user
+    @user = current_user
+  end
+
 end
