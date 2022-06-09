@@ -6,12 +6,12 @@
       <h3>Informations</h3>
       <br>
       <%= simple_form_for(@event) do |f| %>
-        <%= f.input :title, label: "Titre", placeholder: "Ex: Le Lac des Cygnes" %>
-        <%= f.input :venue, label: "Lieu", placeholder: "Ex: Opéra Garnier" %>
-        <%= f.input :address, label: "Adresse", placeholder: "Ex: Place de l'Opéra 75009 Paris" %>
-        <%= f.input :starts_at, label: "Date", html5: true %>
+        <%= f.input :title, label: "Titre", required: true, placeholder: "Ex: Le Lac des Cygnes" %>
+        <%= f.input :venue, label: "Lieu", required: true, placeholder: "Ex: Opéra Garnier" %>
+        <%= f.input :address, label: "Adresse", required: true, placeholder: "Ex: Place de l'Opéra 75009 Paris" %>
+        <%= f.input :starts_at, label: "Date", required: true, html5: true %>
         <div class="div h-200">
-          <%= f.input :category, label: "Catégorie", collection: Event::CATEGORIES ,placeholder: "Ex: funny" %>
+          <%= f.input :category, label: "Catégorie", collection: Event::CATEGORIES %>
         </div>
         <%= f.submit 'Valider', class: 'btn-add-event'%>
       <% end %>
