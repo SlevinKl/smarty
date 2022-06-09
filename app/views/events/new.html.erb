@@ -5,7 +5,7 @@
           <i class="fa-solid fa-angle-left"></i>
         <% end %>
         <div class="form-container mt-1">
-          <h3 class='my-5'>Ajouter un Document</h3>
+          <h3 class='mt-3 mb-4'>Ajouter un Document</h3>
           <%= simple_form_for(@event) do |f| %>
             <%= f.input :document, as: :file %>
             <%= f.submit 'Ajouter', class: 'btn-add-event my-5', data: {action: "click->loader#display"} %>

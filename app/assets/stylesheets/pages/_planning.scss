@@ -24,6 +24,7 @@ ul {
 
 .event-info-wrapper {
   height: 60px;
+  width: 322px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +43,7 @@ ul {
   display: flex;
   // flex-direction: column;
   justify-content: space-between;
-  width: 285px;
+  width: 299px;
   background-color: white;
   padding-block: 2px;
 }
@@ -110,7 +111,7 @@ h5 {
 }
 
 .bullet {
-  margin-left: -23px;
+  margin-left: -24px;
   font-size: 25px;
   padding-right: 10px;
   color:#7061DE;
@@ -124,4 +125,13 @@ h5 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.icone-doc {
+  margin-top: 10px;
+}
+
+.border1 {
+  border-left: solid;
+  color: #838B99;
 }
