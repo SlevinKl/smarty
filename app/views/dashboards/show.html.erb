@@ -59,7 +59,7 @@
               <h3><%= @event.title %></h3>
               <p><%= @event.venue %> <br> <%= l((@event.starts_at), format: ("%A %e %B %Y à %k:%M")).capitalize %></p>
             </div>
-            <%= link_to 'voir évenement', event_path(@event), class:'btn-sign-in' %>
+            <%= link_to "Voir l'évenement", event_path(@event), class:'btn-sign-in' %>
           </div>
         </div>
       </div>
