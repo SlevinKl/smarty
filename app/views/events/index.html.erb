@@ -15,22 +15,22 @@
     <div class='d-flex justify-content-around mb-3' data-controller="category" >
       <div data-action="click->category#choose_sport">
         <%= link_to events_path(date: @date, category: (params[:category] == "Sport" ? nil : "Sport")) do %>
-          <i class="fa-solid <%= 'fa-2x' if params[:category] == "Sport" %> fa-volleyball <%= if params[:category] == "Culture" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'sport-color' end %>" data-category-target="sport"></i>
+          <i class="align-middle fa-solid <%= if params[:category] == "Sport" then 'fa-2x' else 'fa-xl' end %> fa-volleyball <%= if params[:category] == "Culture" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'sport-color' end %>" data-category-target="sport"></i>
         <% end %>
       </div>
       <div data-action="click->category#choose_culture">
         <%= link_to events_path(date: @date, category: (params[:category] == "Culture" ? nil : "Culture")) do %>
-          <i class="fa-solid <%= 'fa-2x' if params[:category] == "Culture" %> fa-book <%= if params[:category] == "Sport" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'culture-color' end %>" data-category-target="culture"></i>
+          <i class="align-middle fa-solid <%= if params[:category] == "Culture" then 'fa-2x' else 'fa-xl' end %> fa-book <%= if params[:category] == "Sport" || params[:category] == "Voyage" || params[:category] == "Autres" then 'grey-color' else 'culture-color' end %>" data-category-target="culture"></i>
         <% end %>
       </div>
       <div data-action="click->category#choose_voyage">
         <%= link_to events_path(date: @date, category: (params[:category] == "Voyage" ? nil : "Voyage")) do %>
-          <i class="fa-solid <%= 'fa-2x' if params[:category] == "Voyage" %> fa-plane-departure <%= if params[:category] == "Sport" || params[:category] == "Culture" || params[:category] == "Autres" then 'grey-color' else 'voyage-color' end %>" data-category-target="voyage"></i>
+          <i class="align-middle fa-solid <%= if params[:category] == "Voyage" then 'fa-2x' else 'fa-xl' end %> fa-plane-departure <%= if params[:category] == "Sport" || params[:category] == "Culture" || params[:category] == "Autres" then 'grey-color' else 'voyage-color' end %>" data-category-target="voyage"></i>
         <% end %>
       </div>
       <div data-action="click->category#choose_autres">
         <%= link_to events_path(date: @date, category: (params[:category] == "Autres" ? nil : "Autres")) do %>
-          <i class="fa-solid <%= 'fa-2x' if params[:category] == "Autres" %> fa-star-of-life <%= if params[:category] == "Sport" || params[:category] == "Culture" || params[:category] == "Voyage" then 'grey-color' else 'autres-color' end %>" data-category-target="autres"></i>
+          <i class="align-middle fa-solid <%= if params[:category] == "Autres" then 'fa-2x' else 'fa-xl' end %> fa-star-of-life <%= if params[:category] == "Sport" || params[:category] == "Culture" || params[:category] == "Voyage" then 'grey-color' else 'autres-color' end %>" data-category-target="autres"></i>
         <% end %>
       </div>
     </div>

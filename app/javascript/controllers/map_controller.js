@@ -18,9 +18,20 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-      new mapboxgl.Marker({ "color": "#7061DE" })
-        .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
-        .addTo(this.map)
+    // ancien marker
+    // new mapboxgl.Marker({ "color": "#7061DE" })
+    //   .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
+    //   .addTo(this.map)
+
+    // Create a HTML element for your custom marker
+    const customMarker = document.createElement("i")
+    customMarker.className = this.markerValue.class_name
+
+    // Pass the element as an argument to the new marker
+    new mapboxgl.Marker(customMarker)
+    .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
+      .addTo(this.map)
+
   }
 
   #fitMapToMarkers() {

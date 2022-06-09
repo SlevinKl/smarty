@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :find_event, only: %i[show edit update]
+  before_action :user
 
   def index
     @events = current_user.events.order(:starts_at)
@@ -20,13 +21,27 @@ class EventsController < ApplicationController
 
     # event.starts_at - Time.current > 0
 
-    @next_event = @events.where(starts_at: Time.current..).first
+    @next_event = @events.where(starts_at: (Time.current - 1.day)..).first
   end
 
   def show
+
+   if @event.user != current_user
+    flash[:alert] = "Vous ne pouvez pas acceder à cette page"
+    redirect_to root_path
+   end
+
+    category_marker_class_mapping = {
+      "Sport"   => "fa-volleyball sport-color",
+      "Culture" => "fa-book culture-color",
+      "Voyage"  => "fa-plane-departure voyage-color",
+      "Autres"  => "fa-star-of-life autres-color"
+    }
+
     @marker = {
       lat: @event.latitude,
-      lng: @event.longitude
+      lng: @event.longitude,
+      class_name: "fa-solid fa-2x #{category_marker_class_mapping[@event.category]}"
     }
   end
 
@@ -70,4 +85,9 @@ class EventsController < ApplicationController
   def find_event
     @event = Event.find(params[:id])
   end
+
+  def user
+    @user = current_user
+  end
+
 end
