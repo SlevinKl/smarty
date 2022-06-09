@@ -1,4 +1,4 @@
 meta_product_name: "Smarty"
 meta_title: "Smarty - Smarty est l'ultime portefeuille intelligent dont vous avez besoin"
 meta_description: "Smarty est un portefeuille intelligent, qui stock tous vos billets contenant des QR codes."
-meta_image: "smarty-best-free.jpg" # should exist in `app/assets/images/`
+meta_image: "smarty-best-free.png" # should exist in `app/assets/images/`
